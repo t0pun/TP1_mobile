@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="textView2">Sign UP</string>
+    <string name="app_name">TP1</string>
+    <string name="inscription">Sign up</string>
+    <string name="nom">Name</string>
+    <string name="prenom">Surname</string>
+    <string name="email">E-mail</string>
+    <string name="telephone">Phone number</string>
+    <string name="mdp">Password</string>
+    <string name="enregistrer">Clic clic pan pan pan</string>
 </resources>

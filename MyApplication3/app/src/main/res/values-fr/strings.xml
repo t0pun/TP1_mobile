@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="app_name">TP1</string>
+    <string name="inscription">Inscris-toi</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">Prenom</string>
+    <string name="email">E-mail</string>
+    <string name="telephone">Numéro de téléphone</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="enregistrer">Clic clic pan pan pan</string>
 </resources>
