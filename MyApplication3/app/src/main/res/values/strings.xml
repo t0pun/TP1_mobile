@@ -1,4 +1,5 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">TP1</string>
     <string name="inscription">Sign up</string>
     <string name="nom">Name</string>
@@ -7,4 +8,11 @@
     <string name="telephone">Phone number</string>
     <string name="mdp">Password</string>
     <string name="enregistrer">Clic clic pan pan pan</string>
+=======
+    <string name="app_name">My Application</string>
+    <string name="textView2">Sign UP</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+>>>>>>> b9547682807e41efe8721cae449615e37cd4ea53
 </resources>
