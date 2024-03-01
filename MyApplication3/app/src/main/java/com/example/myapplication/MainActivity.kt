@@ -1,14 +1,12 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -57,20 +55,40 @@ class MainActivity : AppCompatActivity() {
             if (password.isEmpty() || password.matches(passwordPattern)){
                 passwordLayout.error= "mot de passe invalide"
             }else{
-                val stockName = name
-                editTextName.text?.clear()
-                val stockSurname= surname
-                editTextSurname.text?.clear()
-                val stockEmail= email
-                editTextEmail.text?.clear()
-                val stockPhoneNumber= phoneNumber
-                editTextPhone.text?.clear()
-                val stockPassword= password
-                editTextPassword.text?.clear()
-            }
+                val builder = AlertDialog.Builder(this)
+                    .setTitle("Confirmation")
+                    .setMessage("Voulez-vous enregistrer les informations ?")
+                    .setPositiveButton("Oui") { dialog, _ ->
+                        val stockName = name
+                        editTextName.text?.clear()
+                        val stockSurname= surname
+                        editTextSurname.text?.clear()
+                        val stockEmail= email
+                        editTextEmail.text?.clear()
+                        val stockPhoneNumber= phoneNumber
+                        editTextPhone.text?.clear()
+                        val stockPassword= password
+                        editTextPassword.text?.clear()
+                        Toast.makeText(this, "Informations enregistrées", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss() // Ferme la boîte de dialogue
+                        val intent = Intent(this, Presentation::class.java)
+                        intent.putExtra("name", name)
+                        intent.putExtra("surname", surname)
+                        intent.putExtra("email", email)
+                        intent.putExtra("phoneNumber", phoneNumber)
+                        intent.putExtra("password", password)
+                        startActivity(intent)
+                    }
+                    .setNegativeButton("Non") { dialog, _ ->
+                        // Actions à effectuer lorsque l'utilisateur clique sur "Non"
+                        Toast.makeText(this, "Annulé", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss() // Ferme la boîte de dialogue
+                    }
 
-            val builder= AlertDialog.Builder(this)
-            builder.setTitle("Confirmation")
+                val dialog = builder.create()
+                dialog.show()
+
+            }
 
         }
     }
